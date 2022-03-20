@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question4and5</title>
+    <style>
+        a{
+            color: crimson;
+        }
+        table{
+            margin: 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+         }
+         th{
+             font-weight: 700;
+         }
+         .second th{
+             background-color: rgb(87, 201, 87);
+             color: white;
+         }
+         span{
+             font-weight:bold;
+         }
+         .borders{
+             font-weight: 400;
+             width: 80%;
+             text-align: center;
+             margin-left: 40px;
+             border: 5px solid red;
+         }
+         .borders::before{
+             content: "";
+             position: absolute;
+             border: 10px solid greenyellow;
+             border-style: dotted;
+             top: -20px;
+             left: -20px;
+             right: -20px;
+             bottom: -20px;
+
+         }
+
+    </style>
+</head>
+<body>
+    <a href="www.google.com">this is a link</a>
+    <table>
+        <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+        </tr>
+    </table>
+    <hr>
+    <table class="second">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+            <td>$150</td>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+            <td>$300</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+            <td>$250</td>
+        </tr>
+    </table>
+
+    <h2 class="borders"><span>Note:</span>IE8 supports the ouline properties only if a !DOCTYPE is 
+                           specified</h2>
+</body>
+</html>

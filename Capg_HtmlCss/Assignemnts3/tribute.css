@@ -1,0 +1,44 @@
+body{
+    background: #272727;
+}
+.home{
+    background: linear-gradient(to right,rgba(#272727,0.9),rgba(#272727,0.3)),url("../Assignemnts3/img/ms-dhoni.jpg") center top;
+    background-size: cover;
+}
+.para{
+    background-color: darkgrey;
+    border-bottom: 4px solid orange;
+    padding: 20px;
+}
+h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:darkslategray;
+}
+.para div{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: let;
+}
+img{
+    margin-left:400px; 
+    width:50%;
+}
+header{
+    text-align: center;
+    background-color:aliceblue;
+   
+}
+header h1{
+    color: rgb(83, 83, 226);
+}
+header h1 span{
+    color: rgb(75, 245, 245);
+}
+.tribute{
+    background-color: darkgrey;
+    border-bottom: 4px solid orange;
+    color: cornsilk;
+    padding: 20px;
+}
+.tribute span{
+    color: blue;
+}
