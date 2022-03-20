@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container-fluid text-center">
+		<div>
+			<h1>Manage Users</h1>
+			<a class="h3 m-2" th:href="@{/employees/new}">Add New Employee</a>
+		</div>
+		<div>
+			<table class="table table-responsive table-bordered .table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th><a th:href="@{'/page/'+${currentpage}+'?sortfield=empid&sortDir='+${reversesortdir}}">Employee Id</a></th>
+						<th><a th:href="@{'/page/'+${currentpage}+'?sortfield=empname&sortDir='+${reversesortdir}}">Employee Name</a></th>
+						<th><a th:href="@{'/page/'+${currentpage}+'?sortfield=empdept&sortDir='+${reversesortdir}}">Employee Department</a></th>
+						<th><a th:href="@{'/page/'+${currentpage}+'?sortfield=empdesignation&sortDir='+${reversesortdir}}">Employee Designation</a></th>
+						<th><a th:href="@{'/page/'+${currentpage}+'?sortfield=salary&sortDir='+${reversesortdir}}">Employee salary</a></th>
+						<th>Update or Edit</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="employee: ${list}">
+						<td th:text="${employee.empid}" />
+						<td th:text="${employee.empname}" />
+						<td th:text="${employee.empdept}" />
+						<td th:text="${employee.empdesignation}" />
+						<td th:text="${employee.salary}" />
+						<td><a class="h4 mr-3"
+							th:href="@{'/employees/edit/' + ${employee.empid}}">Edit</a> <a
+							class="h4" th:href="@{'/employees/delete/' + ${employee.empid}}">Delete</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div>
+			Total Items : [[${totalelements}]] - Page [[${currentpage}]] of [[${totalpages}]] 
+			&nbsp;
+			<a th:if="${currentpage > 1}" th:href="@{'/page/1?sortfield='+${sortfield}+'&sortDir='+${sortDir}}">First</a>
+			<span th:unless="${currentpage > 1}">First</span>
+			&nbsp;
+			<a th:if="${currentpage > 1}" th:href="@{'/page/'+${currentpage-1}+'?sortfield='+${sortfield}+'&sortDir='+${sortDir}}">Previous</a>
+			<span th:unless="${currentpage > 1}">Previous</span>
+			&nbsp;
+			<span
+				th:each="i:${#numbers.sequence(1,totalpages)}"> 
+				<a th:if="${i!=currentpage}" th:href="@{'/page/'+${i}+'?sortfield='+${sortfield}+'&sortDir='+${sortDir}}">[[${i}]]</a>
+				<span th:unless="${i!=currentpage}">[[${i}]]</span>
+				&nbsp;&nbsp;
+			</span>
+			&nbsp;
+			<a th:if="${currentpage < totalpages}" th:href="@{'/page/'+${currentpage+1}+'?sortfield='+${sortfield}+'&sortDir='+${sortDir}}">Next</a>
+			<span th:unless="${currentpage < totalpages}">Next</span>
+			&nbsp;
+			<a th:if="${currentpage < totalpages}" th:href="@{'/page/'+${totalpages}+'?sortfield='+${sortfield}+'&sortDir='+${sortDir}}">Last</a>
+			<span th:unless="${currentpage < totalpages}">Last</span>
+			
+		</div>
+	</div>
+
+</body>
+</html>
