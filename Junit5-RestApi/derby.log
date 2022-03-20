@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri Mar 04 14:11:26 IST 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-017f-5417-461d-0000024d5870 
+on database directory memory:C:\Users\APPLE\OneDrive\Desktop\SpringBoot\Junit5-RestApi\d8eb3829-a3b0-4d03-baff-a315d1bcbf95 with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@531d72ca 
+Loaded from file:/C:/Users/APPLE/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Eclipse Adoptium
+java.runtime.version=17.0.1+12
+user.dir=C:\Users\APPLE\OneDrive\Desktop\SpringBoot\Junit5-RestApi
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
