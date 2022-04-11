@@ -45,11 +45,7 @@ public class ProductController {
 		
 	}
 	
-	/*@GetMapping("/news")
-	public String getnews() {
-		rabbitTemplate.convertAndSend(RabbitMQConfiguration.EXCHANGE1, "queue.sports", "message sent to sportsqueue");
-		return "Message sent to subcriber list";
-	}*/
+	
 
 
 }
