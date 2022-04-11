@@ -1,0 +1,8 @@
+db:
+  connection: connection-string-here spring-cloun-config-server
+  host: 127.0.0.1
+  port: 1800
+my:
+  greeting: spring cloud config server
+
+    

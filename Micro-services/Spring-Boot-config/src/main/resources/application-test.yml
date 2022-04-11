@@ -1,0 +1,18 @@
+server:
+  port: 1101
+
+
+qpp:
+  name: My app
+  desc: Welcome to ${app.name}
+  
+  
+my:
+  greeting: Hello World
+      
+
+      
+db:
+  connection: connection-string-here-second
+  host: 127.0.0.78
+  port: 2000

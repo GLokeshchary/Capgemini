@@ -1,0 +1,22 @@
+server:
+  port: 1101
+
+
+qpp:
+  name: My app
+  desc: Welcome to ${app.name}
+  
+  
+my:
+  greeting: Hello World
+      
+dbvalues: {connectionString:'http://',username:"foo",password:"pass"}
+      
+db:
+  connection: connection-string-here
+  host: 127.0.0.1
+  port: 1800
+  
+spring.config.import: optional:configserver:http://localhost:8888
+
+spring.application.name: Spring-Boot-config
