@@ -1,5 +1,6 @@
 package main.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -32,26 +33,23 @@ public class ProductController {
 	public String getallproducts(){
 		String msg = null;
 		List<Product> list=productRepository.findAll();
+		List<Product> list2=new ArrayList<>();
 		for (Product product : list) {
 			if(product.getQuantity()<=10)
 			{
-				rabbitTemplate.convertAndSend(RabbitMQConfiguration.EXCHANGE,"", product);
-				return msg="message sent to the retail service";
-			}
-			else
-			{
-				return msg="no product with less than 10 quantity";
+				list2.add(product);
 			}
 		}
-		return msg;
+		rabbitTemplate.convertAndSend(RabbitMQConfiguration.EXCHANGE,"", list2);
+		return msg="message sent to the retail service";
 		
 	}
 	
-	@GetMapping("/news")
+	/*@GetMapping("/news")
 	public String getnews() {
 		rabbitTemplate.convertAndSend(RabbitMQConfiguration.EXCHANGE1, "queue.sports", "message sent to sportsqueue");
 		return "Message sent to subcriber list";
-	}
+	}*/
 
 
 }
