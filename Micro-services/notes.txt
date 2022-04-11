@@ -1,0 +1,69 @@
+2:02 PM] Shivanee Singh
+1.Complete Eureka 
+2.Handson Without author
+3.12 FactorsApp
+4. 5 Microservices which can be used in our project
+
+
+
+package main.resource;
+
+public class Movie {
+	private String movieid;
+	private String name;
+	public Movie(String movieid, String name) {
+		super();
+		this.movieid = movieid;
+		this.name = name;
+	}
+	public String getMovieid() {
+		return movieid;
+	}
+	public void setMovieid(String movieid) {
+		this.movieid = movieid;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+
+}
+
+<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+<spring-cloud.version>2021.0.1</spring-cloud.version>
+
+
+
+
+
+package main.resource;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Movieinfocontroller {
+
+	@GetMapping("/movies/{movieid}")
+	public Movie getMovieinfo(@PathVariable String movieid) {
+		return new Movie(movieid, "bheemlanayak");
+		
+	}
+}
+
